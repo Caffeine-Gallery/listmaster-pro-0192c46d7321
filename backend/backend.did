@@ -1,0 +1,21 @@
+type ListId = nat;
+type List = 
+ record {
+   id: ListId;
+   items: vec Item;
+   name: text;
+ };
+type ItemId = nat;
+type Item = 
+ record {
+   completed: bool;
+   description: text;
+   id: ItemId;
+ };
+service : {
+  addItem: (ListId, text) -> (opt ItemId);
+  createList: (text) -> (ListId);
+  deleteItem: (ListId, ItemId) -> (bool);
+  getLists: () -> (vec List) query;
+  toggleItem: (ListId, ItemId) -> (bool);
+}

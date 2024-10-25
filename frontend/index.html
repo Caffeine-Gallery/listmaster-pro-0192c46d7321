@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Lists</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-shopping-cart"></i> Shopping Lists</h1>
+            <div class="new-list-form">
+                <input type="text" id="newListInput" placeholder="New List Name">
+                <button onclick="createNewList()">
+                    <i class="fas fa-plus"></i> Create List
+                </button>
+            </div>
+        </header>
+
+        <main id="listsContainer">
+            <!-- Lists will be dynamically added here -->
+        </main>
+    </div>
+
+    <template id="listTemplate">
+        <div class="list-card">
+            <h2 class="list-title"></h2>
+            <div class="add-item-form">
+                <input type="text" class="new-item-input" placeholder="Add new item">
+                <button class="add-item-btn">
+                    <i class="fas fa-plus"></i>
+                </button>
+            </div>
+            <ul class="items-list">
+                <!-- Items will be dynamically added here -->
+            </ul>
+        </div>
+    </template>
+
+    <script type="module" src="index.js"></script>
+</body>
+</html>
